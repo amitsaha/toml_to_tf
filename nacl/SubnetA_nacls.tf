@@ -15,10 +15,10 @@ resource "aws_network_acl_rule" "rule_SubnetA_ingress_101" {
 
 
 }
-resource "aws_network_acl_rule" "rule_SubnetA_ingress_102" {
+resource "aws_network_acl_rule" "rule_SubnetA_egress_102" {
 
     network_acl_id = "${lookup(local.network_acl_ids_map, "SubnetA")}"
-    egress = false
+    egress = true
     rule_number = 102
     rule_action = "allow"
     cidr_block = "127.0.0.1/32"
